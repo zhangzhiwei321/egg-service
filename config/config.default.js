@@ -18,9 +18,20 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,POST'
+  };
+
   // add your user config here
   const userConfig = {
-    // myAppName: 'egg',
+    uploadpah: 'localhost:7001/public/uploadfile/',
   };
 
   return {
